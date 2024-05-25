@@ -85,7 +85,7 @@
 - **Descrição**: Permite acessar informações de uma conta específica com base no ID.
 - **Funcionamento**: O endpoint `/accounts/<int:id>` recebe um ID de conta como parâmetro na URL. Ao acessar esse endpoint, o sistema retorna as informações da conta correspondente ao ID fornecido.
 
-## Listar Contas (Com parêmetro opcional de filtragem na url)
+## Listar Contas (Com parâmetro opcional de filtragem na url)
 ![image](https://github.com/vitoriarntrindade/simple-bank-5/assets/139915844/f2bfe280-1966-4e05-839b-dee47dfedd81)
 
 - **Endpoint**: `/accounts/`
@@ -122,3 +122,4 @@ O projeto está em constante evolução e há várias melhorias planejadas para 
 
    * Autenticação de Usuário: Implementar um sistema de autenticação robusto para garantir que apenas usuários autorizados tenham acesso às funcionalidades do aplicativo.
    * Deixar a validação dos dados de entrada mais robusto. (*Atualmente tem sido feito através de schemas*)
+   * Testes de integração e testes unitários 
