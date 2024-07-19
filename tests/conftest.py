@@ -1,7 +1,7 @@
 import pytest
 from sqlalchemy.orm import Session
 from conf.db_session import create_engine, create_tables, create_session
-
+from App.app import app
 
 @pytest.fixture(scope='module')
 def test_engine():
@@ -21,3 +21,4 @@ def test_session(test_engine) -> Session:
 @pytest.fixture
 def base_url():
     return 'http://localhost:5000'
+
