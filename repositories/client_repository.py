@@ -3,6 +3,7 @@ from conf.db_session import create_session
 from typing import List
 from datetime import datetime
 
+
 def get_all_clients() -> List[Client]:
     with create_session() as session:
         clients: List[Client] = session.query(Client).filter().all()
@@ -49,7 +50,7 @@ def update_client_by_id(id, data):
             return
 
         if "name" in data:
-            client.name = str(data["name"]).title()
+            client.name = str(data["name"])
         if "birthday" in data:
             client.birthday = data["birthday"]
         if "cpf" in data:

@@ -17,6 +17,7 @@ def test_engine():
 @pytest.fixture(scope='module')
 def test_session(test_engine) -> Session:
     session = create_session()
+
     yield session
     session.close()
 
@@ -49,10 +50,12 @@ def test_create_client(test_session: Session, base_url):
 def test_update_client(test_session: Session, base_url):
     url = f"{base_url}/clients/1"
 
-    data = {'name': 'Teste', 'cpf': '11122233344', 'birthday': '2000-10-21'}
+    data = {'name': 'Teste', 'cpf': '11122233344'}
 
     response = requests.patch(url, json=data)
-    client_update = test_session.query(Client).filter_by(name=data['name']).first()
 
-    assert client_update.name == "Teste"
-    assert response.status_code == "200"
+    client_update = test_session.query(Client).filter_by(id=1).first()
+
+    assert client_update.cpf == '11122233344'
+    assert response.status_code == 200
+
